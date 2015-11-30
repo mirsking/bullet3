@@ -268,7 +268,7 @@ void ConvertURDF2BulletInternal(const URDFImporterInterface& u2b, MultiBodyCreat
                     {
                         //todo: adjust the center of mass transform and pivot axis properly
 
-                        //b3Printf("Fixed joint (btMultiBody)\n");
+                        //b3Printf("FallocateMultiBodyLinkColliderixed joint (btMultiBody)\n");
                         btQuaternion rot = offsetInA.inverse().getRotation();//parent2joint.inverse().getRotation();
                         cache.m_bulletMultiBody->setupFixed(mbLinkIndex, mass, localInertiaDiagonal, mbParentIndex,
                                                                rot*offsetInB.getRotation(), offsetInA.getOrigin(),-offsetInB.getOrigin());
@@ -298,6 +298,10 @@ void ConvertURDF2BulletInternal(const URDFImporterInterface& u2b, MultiBodyCreat
                                                                   -offsetInB.getOrigin(),
                                                                   disableParentCollision);
                         creation.addLinkMapping(urdfLinkIndex,mbLinkIndex);
+
+                        btMultiBodyConstraint* con = new btMultiBodyJointLimitConstraint(cache.m_bulletMultiBody,mbLinkIndex,jointLowerLimit, jointUpperLimit);
+                        world1->addMultiBodyConstraint(con);
+                        printf("joint lower limit=%f, upper limit = %f\n", jointLowerLimit, jointUpperLimit);
 
                     } else
                     {
