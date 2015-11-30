@@ -4,6 +4,7 @@
 
 #include "LinearMath/btAlignedObjectArray.h"
 #include "EmptyExample.h"
+#include "../Graspit/GraspitExample.h"
 #include "../RenderingExamples/RenderInstancingDemo.h"
 #include "../RenderingExamples/CoordinateSystemDemo.h"
 #include "../RenderingExamples/RaytracerSetup.h"
@@ -247,7 +248,10 @@ static ExampleEntry gDefaultExamples[]=
 	ExampleEntry(0,"Rendering"),
 	ExampleEntry(1,"Instanced Rendering", "Simple example of fast instanced rendering, only active when using OpenGL3+.",RenderInstancingCreateFunc),
 	ExampleEntry(1,"CoordinateSystemDemo","Show the axis and positive rotation direction around the axis.", CoordinateSystemCreateFunc),
-	ExampleEntry(1,"Time Series", "Render some value(s) in a 2D graph window, shifting to the left", TimeSeriesCreateFunc)
+    ExampleEntry(1,"Time Series", "Render some value(s) in a 2D graph window, shifting to the left", TimeSeriesCreateFunc),
+
+    ExampleEntry(0, "Graspit"),
+    ExampleEntry(1, "Graspit by KG3", "Graspit demo for physical simulation of grasp object.", GraspitExampleCreateFunc)
 	
 };
 

@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<robot name="kinova_kg3" xmlns:xacro="http://ros.org/wiki/xacro">
+	<!--
+	   Little helper macro to define the inertia matrix needed
+	   for links.
+	   -->
+	<!-- width is along x axis
+	     length is along y axis
+	     height is along z axis
+	-->
+	<macro name="cuboid_inertia_def" params="width height length mass">
+	  <inertia ixx="${mass * (height * height + length * length) / 12}"
+	           iyy="${mass * (width * width + height * height) / 12}"
+	           izz="${mass * (width * width + length * length) / 12}"
+	           ixy="0" iyz="0" ixz="0"/>
+	</macro>
+	
+	<!-- length is along the y-axis! -->
+	<macro name="cylinder_inertia_def" params="radius length mass">
+	  <inertia ixx="${mass * (3 * radius * radius + length * length) / 12}"
+	           iyy="${mass * radius* radius / 2}"
+	           izz="${mass * (3 * radius * radius + length * length) / 12}"
+	           ixy="0" iyz="0" ixz="0"/>
+	</macro>
+
+	<property name="PKG" value=""/>
+	<property name="M_PI" value="3.14159265258979"/>
+	<property name="MESHLAB_SCALE" value="10.0"/>
+	<!--<property name="PKG" value="package://kinova_kg3/"/>-->
+	<!--
+	<link name="base_link">
+		<visual>
+			<origin xyz="0 0 0.5" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.2 0.2 1"/>
+			</geometry>
+			<mass value="0.0"/>
+			<xacro:cuboid_inertia_def width="0.2" length="0.2" height="1.0" mass="2"/> 
+		</visual>
+		<collision>
+			<origin xyz="0 0 0.5" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.2 0.2 1"/>
+			</geometry>
+		</collision>
+	</link>
+
+	<joint name="base_to_hand" type="fixed">
+		<origin xyz="-0.1 0 0.9" rpy="0 ${-90*M_PI/180} 0"/>
+		<parent link="base_link"/>
+		<child link="jaco_link_hand"/>
+	</joint>
+-->
+	<link name="jaco_link_hand">
+		<inertial>
+			<origin xyz="${-0.002375/MESHLAB_SCALE} ${0.041767/MESHLAB_SCALE} ${0.758896/MESHLAB_SCALE}" rpy="0 0 0" />
+			<!--<mass value="${0.121620/MESHLAB_SCALE/MESHLAB_SCALE}"/>-->
+			<mass value="0.0"/>
+		  <inertia
+			  ixx="${0.021528/MESHLAB_SCALE/MESHLAB_SCALE}"
+			  iyy="${0.018751/MESHLAB_SCALE/MESHLAB_SCALE}"
+			  izz="${0.015785/MESHLAB_SCALE/MESHLAB_SCALE}"
+			  ixy="${0.000001/MESHLAB_SCALE/MESHLAB_SCALE}"
+			  ixz="${-0.000006/MESHLAB_SCALE/MESHLAB_SCALE}"
+			  iyz="${-0.000143/MESHLAB_SCALE/MESHLAB_SCALE}" 
+			  />
+		</inertial>
+		<visual>
+		  <origin xyz="0 0 0" rpy="0 0 0" />
+		  <geometry>
+			  <mesh filename="${PKG}meshes/jaco_link_hand.STL" />
+		  </geometry>
+		  <material name="">
+			<color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+		  </material>
+		</visual>
+		<collision>
+		  <origin xyz="0 0 0" rpy="0 0 0" />
+		  <geometry>
+			  <mesh filename="${PKG}meshes/jaco_link_hand.STL" />
+		  </geometry>
+		</collision>
+	</link>
+
+	<xacro:include filename="kinova_kg3_finger.xacro" />
+	<xacro:kinova_kg3_finger index="1" origin_xx="0.00228309324472738" origin_yy="-0.0312566848705875" origin_zz="0.114430431187145"
+      origin_r="1.57925286601306" origin_p="-0.980344825914001" origin_y="-1.60227019088307" />
+
+	<xacro:kinova_kg3_finger index="2" origin_xx="0.0216844849669984" origin_yy="0.0270991446492316" origin_zz="0.114669378846608"
+      origin_r="1.5624840408079" origin_p="-0.979964587178996" origin_y="1.39416913026774" />
+
+	<xacro:kinova_kg3_finger index="3" origin_xx="-0.0228265816404847" origin_yy="0.0270473381757137" origin_zz="0.114459755557531"
+      origin_r="1.56250901307788" origin_p="-0.978234931608093" origin_y="1.76352902216187" />
+
+</robot>
