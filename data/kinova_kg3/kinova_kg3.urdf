@@ -71,9 +71,9 @@
   </joint>
   <link name="jaco_link_finger_1">
     <inertial>
-      <origin rpy="0 0 0" xyz="0.0208232 -0.0062151 4.3e-06"/>
-      <mass value="0.0008862"/>
-      <inertia ixx="1.04e-06" ixy="-1.3e-07" ixz="0.0" iyy="2.39e-06" iyz="0.0" izz="2.18e-06"/>
+      <origin rpy="0 0 0" xyz="0.042652 -0.0061351 2.2e-06"/>
+      <mass value="0.0021306"/>
+      <inertia ixx="1.72e-06" ixy="1.2e-07" ixz="0.0" iyy="1.21e-05" iyz="0.0" izz="1.179e-05"/>
     </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -91,33 +91,6 @@
       </geometry>
     </collision>
   </link>
-  <link name="jaco_link_finger_tip_1">
-    <inertial>
-      <origin rpy="0 0 0" xyz="0.0140432 -0.006058 7e-07"/>
-      <mass value="0.0124078189139213"/>
-      <inertia ixx="6.8e-07" ixy="2.8e-07" ixz="0.0" iyy="2.47e-06" iyz="0.0" izz="2.36e-06"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="meshes/jaco_link_finger_tip_2.STL"/>
-      </geometry>
-      <material name="kinova_color"/>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="meshes/jaco_link_finger_tip_2.STL"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="jaco_joint_finger_tip_1" type="revolute">
-    <origin rpy="-1.11022302462516E-16 1.38777878078145E-17 -8.67361737988404E-18" xyz="0.0441021541423999 0 0"/>
-    <parent link="jaco_link_finger_1"/>
-    <child link="jaco_link_finger_tip_1"/>
-    <limit effort="30" lower="0" upper="0.872664625997" velocity="5"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <joint name="jaco_joint_finger_2" type="revolute">
     <origin rpy="1.56248404081 -0.979964587179 1.39416913027" xyz="0.021684484967 0.0270991446492 0.114669378847"/>
     <parent link="jaco_link_hand"/>
@@ -127,9 +100,9 @@
   </joint>
   <link name="jaco_link_finger_2">
     <inertial>
-      <origin rpy="0 0 0" xyz="0.0208232 -0.0062151 4.3e-06"/>
-      <mass value="0.0008862"/>
-      <inertia ixx="1.04e-06" ixy="-1.3e-07" ixz="0.0" iyy="2.39e-06" iyz="0.0" izz="2.18e-06"/>
+      <origin rpy="0 0 0" xyz="0.042652 -0.0061351 2.2e-06"/>
+      <mass value="0.0021306"/>
+      <inertia ixx="1.72e-06" ixy="1.2e-07" ixz="0.0" iyy="1.21e-05" iyz="0.0" izz="1.179e-05"/>
     </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -147,33 +120,6 @@
       </geometry>
     </collision>
   </link>
-  <link name="jaco_link_finger_tip_2">
-    <inertial>
-      <origin rpy="0 0 0" xyz="0.0140432 -0.006058 7e-07"/>
-      <mass value="0.0124078189139213"/>
-      <inertia ixx="6.8e-07" ixy="2.8e-07" ixz="0.0" iyy="2.47e-06" iyz="0.0" izz="2.36e-06"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="meshes/jaco_link_finger_tip_2.STL"/>
-      </geometry>
-      <material name="kinova_color"/>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="meshes/jaco_link_finger_tip_2.STL"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="jaco_joint_finger_tip_2" type="revolute">
-    <origin rpy="-1.11022302462516E-16 1.38777878078145E-17 -8.67361737988404E-18" xyz="0.0441021541423999 0 0"/>
-    <parent link="jaco_link_finger_2"/>
-    <child link="jaco_link_finger_tip_2"/>
-    <limit effort="30" lower="0" upper="0.872664625997" velocity="5"/>
-    <axis xyz="0 0 1"/>
-  </joint>
   <joint name="jaco_joint_finger_3" type="revolute">
     <origin rpy="1.56250901308 -0.978234931608 1.76352902216" xyz="-0.0228265816405 0.0270473381757 0.114459755558"/>
     <parent link="jaco_link_hand"/>
@@ -183,9 +129,9 @@
   </joint>
   <link name="jaco_link_finger_3">
     <inertial>
-      <origin rpy="0 0 0" xyz="0.0208232 -0.0062151 4.3e-06"/>
-      <mass value="0.0008862"/>
-      <inertia ixx="1.04e-06" ixy="-1.3e-07" ixz="0.0" iyy="2.39e-06" iyz="0.0" izz="2.18e-06"/>
+      <origin rpy="0 0 0" xyz="0.042652 -0.0061351 2.2e-06"/>
+      <mass value="0.0021306"/>
+      <inertia ixx="1.72e-06" ixy="1.2e-07" ixz="0.0" iyy="1.21e-05" iyz="0.0" izz="1.179e-05"/>
     </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -203,32 +149,5 @@
       </geometry>
     </collision>
   </link>
-  <link name="jaco_link_finger_tip_3">
-    <inertial>
-      <origin rpy="0 0 0" xyz="0.0140432 -0.006058 7e-07"/>
-      <mass value="0.0124078189139213"/>
-      <inertia ixx="6.8e-07" ixy="2.8e-07" ixz="0.0" iyy="2.47e-06" iyz="0.0" izz="2.36e-06"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="meshes/jaco_link_finger_tip_2.STL"/>
-      </geometry>
-      <material name="kinova_color"/>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="meshes/jaco_link_finger_tip_2.STL"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="jaco_joint_finger_tip_3" type="revolute">
-    <origin rpy="-1.11022302462516E-16 1.38777878078145E-17 -8.67361737988404E-18" xyz="0.0441021541423999 0 0"/>
-    <parent link="jaco_link_finger_3"/>
-    <child link="jaco_link_finger_tip_3"/>
-    <limit effort="30" lower="0" upper="0.872664625997" velocity="5"/>
-    <axis xyz="0 0 1"/>
-  </joint>
 </robot>
 

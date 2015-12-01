@@ -16,14 +16,14 @@
     	<link name="jaco_link_finger_${index}">
 			<inertial>
 			  <origin
-				  xyz="${0.208232/MESHLAB_SCALE} ${-0.062151/MESHLAB_SCALE} ${0.000043/MESHLAB_SCALE}"
+				  xyz="${0.426520/MESHLAB_SCALE} ${-0.061351/MESHLAB_SCALE} ${0.000022/MESHLAB_SCALE}"
 				rpy="0 0 0" />
-			  <mass value="${0.008862/MESHLAB_SCALE}" />
+			  <mass value="${0.021306/MESHLAB_SCALE}" />
 		      <inertia
-				  ixx="${0.000104/MESHLAB_SCALE/MESHLAB_SCALE}"
-				  iyy="${0.000239/MESHLAB_SCALE/MESHLAB_SCALE}"
-				  izz="${0.000218/MESHLAB_SCALE/MESHLAB_SCALE}"
-				  ixy="${-0.000013/MESHLAB_SCALE/MESHLAB_SCALE}"
+				  ixx="${0.000172/MESHLAB_SCALE/MESHLAB_SCALE}"
+				  iyy="${0.001210/MESHLAB_SCALE/MESHLAB_SCALE}"
+				  izz="${0.001179/MESHLAB_SCALE/MESHLAB_SCALE}"
+				  ixy="${0.000012/MESHLAB_SCALE/MESHLAB_SCALE}"
 				  ixz="${0.0/MESHLAB_SCALE/MESHLAB_SCALE}"
 				  iyz="${0.0/MESHLAB_SCALE/MESHLAB_SCALE}" 
 			  />
@@ -44,45 +44,6 @@
 			  </geometry>
 			</collision>
 	    </link>
-
-
-		<link name="jaco_link_finger_tip_${index}">
-			<inertial>
-			  <origin
-				xyz="${0.140432/MESHLAB_SCALE} ${-0.060580/MESHLAB_SCALE} ${0.000007/MESHLAB_SCALE}"
-				rpy="0 0 0" />
-			  <mass value="0.0124078189139213" />
-		      <inertia
-				  ixx="${0.000068/MESHLAB_SCALE/MESHLAB_SCALE}"
-				  iyy="${0.000247/MESHLAB_SCALE/MESHLAB_SCALE}"
-				  izz="${0.000236/MESHLAB_SCALE/MESHLAB_SCALE}"
-				  ixy="${0.000028/MESHLAB_SCALE/MESHLAB_SCALE}"
-				  ixz="${0.0/MESHLAB_SCALE/MESHLAB_SCALE}"
-				  iyz="${0.0/MESHLAB_SCALE/MESHLAB_SCALE}" 
-			  />
-	        </inertial>
-			<visual>
-			  <origin xyz="0 0 0" rpy="0 0 0" />
-			  <geometry>
-				  <mesh filename="${PKG}meshes/jaco_link_finger_tip_2.STL" />
-			  </geometry>
-			  <material name="kinova_color"/>
-			</visual>
-			<collision>
-			  <origin xyz="0 0 0" rpy="0 0 0" />
-			  <geometry>
-				  <mesh filename="${PKG}meshes/jaco_link_finger_tip_2.STL" />
-			  </geometry>
-			</collision>
-		</link>
-		<joint name="jaco_joint_finger_tip_${index}" type="revolute">
-
-		    <origin xyz="0.0441021541423999 0 0" rpy="-1.11022302462516E-16 1.38777878078145E-17 -8.67361737988404E-18" />
-			<parent link="jaco_link_finger_${index}" />
-			<child link="jaco_link_finger_tip_${index}" />
-			<limit lower="0" upper="${50*M_PI/180}" effort="30" velocity="5"/>
-			<axis xyz="0 0 1" />
-		</joint>
 	</xacro:macro>
 </robot>
 
