@@ -40,7 +40,7 @@
 			<collision>
 			  <origin xyz="0 0 0" rpy="0 0 0" />
 			  <geometry>
-				  <mesh filename="${PKG}meshes/jaco_link_finger_2.STL" />
+				  <mesh filename="${PKG}meshes/jaco_link_finger_2_collision.STL" />
 			  </geometry>
 			</collision>
 	    </link>

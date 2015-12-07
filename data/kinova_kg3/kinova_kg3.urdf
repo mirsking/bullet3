@@ -57,7 +57,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/jaco_link_hand.STL"/>
+        <mesh filename="meshes/jaco_link_hand_collision.STL"/>
       </geometry>
     </collision>
   </link>
@@ -87,7 +87,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/jaco_link_finger_2.STL"/>
+        <mesh filename="meshes/jaco_link_finger_2_collision.STL"/>
       </geometry>
     </collision>
   </link>
@@ -116,7 +116,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/jaco_link_finger_2.STL"/>
+        <mesh filename="meshes/jaco_link_finger_2_collision.STL"/>
       </geometry>
     </collision>
   </link>
@@ -145,7 +145,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/jaco_link_finger_2.STL"/>
+        <mesh filename="meshes/jaco_link_finger_2_collision.STL"/>
       </geometry>
     </collision>
   </link>
