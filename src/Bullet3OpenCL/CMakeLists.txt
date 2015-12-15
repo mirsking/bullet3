@@ -33,13 +33,13 @@ SET(Bullet3OpenCL_clew_SRCS
 	RigidBody/b3GpuPgsContactSolver.cpp
 	RigidBody/b3GpuRigidBodyPipeline.cpp
 	RigidBody/b3Solver.cpp
+       CollisionDetectionManager/b3GpuCollisionDetectionManager.cpp
 )
 
 
 SET(Bullet3OpenCL_clew_HDRS
 #	${Root_HDRS}
 )
-
 
 ADD_LIBRARY(Bullet3OpenCL_clew ${Bullet3OpenCL_clew_SRCS} ${Bullet3OpenCL_clew_HDRS})
 SET_TARGET_PROPERTIES(Bullet3OpenCL_clew PROPERTIES VERSION ${BULLET_VERSION})
@@ -48,6 +48,16 @@ IF (BUILD_SHARED_LIBS)
   TARGET_LINK_LIBRARIES(Bullet3OpenCL_clew LinearMath Bullet3Dynamics)
 ENDIF (BUILD_SHARED_LIBS)
 
+add_executable(collision_detection_manager
+       CollisionDetectionManager/main.cpp
+)
+target_link_libraries(collision_detection_manager
+        Bullet3OpenCL_clew
+        Bullet3Collision
+        Bullet3Common
+        Bullet3Geometry
+        ${CMAKE_DL_LIBS}
+)
 
 IF (INSTALL_LIBS)
 	IF (NOT INTERNAL_CREATE_DISTRIBUTABLE_MSVC_PROJECTFILES)
